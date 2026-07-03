@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flash</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f1ea;
+      color: #222;
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 26px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .language {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .language button {
+      width: auto;
+      padding: 8px 14px;
+      margin: 0;
+      border-radius: 999px;
+      background: #eeeeee;
+      color: #222;
+      font-size: 14px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .language button.active {
+      background: #111;
+      color: white;
+    }
+
+    .alert {
+      background: #ffe8e8;
+      color: #9b111e;
+      border-radius: 18px;
+      padding: 14px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    img.dog-photo {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 0 0 8px;
+    }
+
+    .urgent {
+      font-size: 21px;
+      font-weight: bold;
+      margin: 14px 0;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .actions {
+      margin-top: 22px;
+    }
+
+    .action,
+    .location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 12px 0;
+      padding: 16px;
+      border-radius: 16px;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .call {
+      background: #111;
+      color: white;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .email {
+      background: #2563eb;
+      color: white;
+    }
+
+    .location {
+      background: #0057ff;
+      color: white;
+    }
+
+    .whatsapp img {
+      width: 26px;
+      height: 26px;
+    }
+
+    .info {
+      margin-top: 28px;
+      font-size: 17px;
+      color: #555;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #666;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="card">
+
+      <div class="language">
+        <button onclick="setLanguage('en')" id="btn-en">EN</button>
+        <button onclick="setLanguage('fr')" id="btn-fr">FR</button>
+        <button onclick="setLanguage('lu')" id="btn-lu">LU</button>
+      </div>
+
+      <div class="alert" id="alert"></div>
+
+      <img class="dog-photo" src="dog.jpg" alt="Photo of Flash">
+
+      <h1>Flash</h1>
+
+      <p class="urgent" id="subtitle"></p>
+
+      <p id="intro"></p>
+
+      <div class="actions">
+        <a class="action call" id="callButton" href="#"></a>
+
+        <a class="action whatsapp" id="whatsappButton" href="#">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          <span id="whatsappText"></span>
+        </a>
+
+        <a class="action email" id="emailButton" href="#"></a>
+      </div>
+
+      <button class="location" id="locationButton" onclick="shareLocation()"></button>
+
+      <div class="info" id="thanks"></div>
+
+      <p id="status" class="small"></p>
+    </section>
+  </main>
+
+  <script>
+    const dogName = "Flash";
+    const phoneForLinks = "352691198105";
+    const email = "paul.heber@mac.com";
+
+    const texts = {
+      en: {
+        alert: "🚨 Lost dog",
+        subtitle: "Please help me reunite with my family.",
+        intro: `My name is <strong>${dogName}</strong>. I am microchipped. I am friendly, but I may be frightened. Please contact my owner as soon as possible.`,
+        call: "📞 Call owner",
+        whatsapp: "WhatsApp",
+        location: "📍 Share my location",
+        email: "✉️ Email owner",
+        thanks: "❤️ Thank you for helping me get home.",
+        locationAsk: "Asking for permission to share location...",
+        locationUnsupported: "Location sharing is not supported on this device.",
+        locationDenied: "Location permission was not granted. Please call or message the owner.",
+        foundMessage: "Hello, I found Flash. My location is: "
+      },
+      fr: {
+        alert: "🚨 Chien perdu",
+        subtitle: "Aidez moi à retrouver ma famille.",
+        intro: `Je m'appelle <strong>${dogName}</strong>. Je suis identifié par puce électronique. Je suis gentil, mais je peux avoir peur. Merci de contacter mon propriétaire dès que possible.`,
+        call: "📞 Appeler le propriétaire",
+        whatsapp: "WhatsApp",
+        location: "📍 Partager ma position",
+        email: "✉️ Envoyer un email",
+        thanks: "❤️ Merci de m'aider à rentrer chez moi.",
+        locationAsk: "Demande d'autorisation pour partager la position...",
+        locationUnsupported: "Le partage de position n'est pas disponible sur cet appareil.",
+        locationDenied: "La position n'a pas été partagée. Merci d'appeler ou d'envoyer un message au propriétaire.",
+        foundMessage: "Bonjour, j'ai trouvé Flash. Ma position est : "
+      },
+      lu: {
+        alert: "🚨 Hond vermësst",
+        subtitle: "Hëlleft mir, meng Famill erëmzefannen.",
+        intro: `Mäin Numm ass <strong>${dogName}</strong>. Ech si gechipt. Ech si frëndlech, mee ech kann Angscht hunn. Kontaktéiert w.e.g. mäi Besëtzer esou séier wéi méiglech.`,
+        call: "📞 Mäi Besëtzer uruffen",
+        whatsapp: "WhatsApp",
+        location: "📍 Meng Positioun deelen",
+        email: "✉️ Email schécken",
+        thanks: "❤️ Merci, datt Dir mir hëlleft heemzekommen.",
+        locationAsk: "Erlaabnis fir d'Positioun ze deelen gëtt ugefrot...",
+        locationUnsupported: "Positioun deelen ass op dësem Apparat net méiglech.",
+        locationDenied: "D'Positioun gouf net gedeelt. Rufft w.e.g. un oder schéckt eng Noriicht.",
+        foundMessage: "Moien, ech hunn de Flash fonnt. Meng Positioun ass: "
+      }
+    };
+
+    let currentLanguage = "en";
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      const t = texts[language];
+
+      document.documentElement.lang = language;
+      document.getElementById("alert").textContent = t.alert;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("intro").innerHTML = t.intro;
+      document.getElementById("callButton").textContent = t.call;
+      document.getElementById("whatsappText").textContent = t.whatsapp;
+      document.getElementById("locationButton").textContent = t.location;
+      document.getElementById("emailButton").textContent = t.email;
+      document.getElementById("thanks").textContent = t.thanks;
+      document.getElementById("status").textContent = "";
+
+      document.getElementById("callButton").href = "tel:+" + phoneForLinks;
+
+      document.getElementById("whatsappButton").href =
+        "https://wa.me/" + phoneForLinks + "?text=" + encodeURIComponent(t.foundMessage);
+
+      document.getElementById("emailButton").href =
+        "mailto:" + email + "?subject=" + encodeURIComponent(t.alert) + "&body=" + encodeURIComponent(t.foundMessage);
+
+      document.querySelectorAll(".language button").forEach(button => {
+        button.classList.remove("active");
+      });
+
+      document.getElementById("btn-" + language).classList.add("active");
+    }
+
+    function shareLocation() {
+      const status = document.getElementById("status");
+      const t = texts[currentLanguage];
+
+      if (!navigator.geolocation) {
+        status.textContent = t.locationUnsupported;
+        return;
+      }
+
+      status.textContent = t.locationAsk;
+
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          const mapLink = "https://www.google.com/maps?q=" + lat + "," + lon;
+          const message = encodeURIComponent(t.foundMessage + mapLink);
+
+          window.location.href = "https://wa.me/" + phoneForLinks + "?text=" + message;
+        },
+        function() {
+          status.textContent = t.locationDenied;
+        }
+      );
+    }
+
+    setLanguage("en");
+  </script>
+</body>
+</html>
