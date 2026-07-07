@@ -3,217 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flash</title>
-
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Flash 🐾 Lost Dog">
+  <meta property="og:description" content="If you've found Flash, please help me get back home. I am microchipped and friendly, but I may be frightened.">
+  <meta property="og:image" content="https://findmydog.online/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://findmydog.online">
+  <meta property="og:site_name" content="Find My Dog">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flash 🐾 Lost Dog">
+  <meta name="twitter:description" content="If you've found Flash, please help me get back home.">
+  <meta name="twitter:image" content="https://findmydog.online/share.png">
+  <title>Flash - Lost Dog</title>
   <style>
-    :root {
-      --background: #f4f1ea;
-      --card: #ffffff;
-      --text: #222222;
-      --muted: #555555;
-      --alert-bg: #ffe8e8;
-      --alert-text: #9b111e;
-      --call: #10B981;
-      --call-hover: #059669;
-      --whatsapp: #25D366;
-      --whatsapp-hover: #1DA851;
-      --email: #2563EB;
-      --email-hover: #1D4ED8;
-      --location: #F59E0B;
-      --location-hover: #D97706;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
-      color: var(--text);
-    }
-
-    main {
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 26px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .language {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .language button {
-      width: auto;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #eeeeee;
-      color: #222;
-      font-size: 14px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .language button.active {
-      background: #111;
-      color: white;
-    }
-
-    .alert {
-      background: var(--alert-bg);
-      color: var(--alert-text);
-      border-radius: 18px;
-      padding: 14px;
-      margin-bottom: 20px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .dog-photo {
-      width: 190px;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: 40px;
-      margin: 0 0 8px;
-    }
-
-    .urgent {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 14px 0;
-    }
-
-    p {
-      line-height: 1.5;
-    }
-
-    input,
-    textarea,
-    button.submit,
-    button.location {
-      width: 100%;
-      margin: 10px 0;
-      padding: 16px;
-      border-radius: 16px;
-      border: 1px solid #dddddd;
-      font-size: 17px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .actions {
-      margin-top: 20px;
-    }
-
-    .action,
-    button.submit,
-    button.location {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: none;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .action {
-      width: 100%;
-      padding: 16px;
-      border-radius: 16px;
-      font-size: 18px;
-      margin: 12px 0;
-    }
-
-    .action:hover,
-    button.submit:hover,
-    button.location:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .call {
-      background: var(--call);
-    }
-
-    .call:hover {
-      background: var(--call-hover);
-    }
-
-    .whatsapp {
-      background: var(--whatsapp);
-    }
-
-    .whatsapp:hover {
-      background: var(--whatsapp-hover);
-    }
-
-    .email,
-    button.submit {
-      background: var(--email);
-    }
-
-    .email:hover,
-    button.submit:hover {
-      background: var(--email-hover);
-    }
-
-    button.location {
-      background: var(--location);
-    }
-
-    button.location:hover {
-      background: var(--location-hover);
-    }
-
-    .icon {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-    }
-
-    .thanks {
-      margin-top: 24px;
-      font-size: 17px;
-      color: var(--muted);
-      font-style: italic;
-      line-height: 1.5;
-    }
-
-    .small {
-      font-size: 13px;
-      color: #666;
-      margin-top: 12px;
-      line-height: 1.4;
-    }
+    :root {--background: #f4f1ea;--card: #ffffff;--text: #222222;--muted: #555555;--alert-bg: #ffe8e8;--alert-text: #9b111e;--call: #10B981;--call-hover: #059669;--whatsapp: #25D366;--whatsapp-hover: #1DA851;--email: #2563EB;--email-hover: #1D4ED8;--location: #F59E0B;--location-hover: #D97706;}
+    * {box-sizing: border-box;}
+    body {margin: 0;font-family: Arial, Helvetica, sans-serif;background: var(--background);color: var(--text);}
+    main {max-width: 520px;margin: 0 auto;padding: 22px;}
+    .card {background: var(--card);border-radius: 26px;padding: 24px;text-align: center;box-shadow: 0 10px 30px rgba(0,0,0,0.08);}
+    .language {display: flex;gap: 8px;justify-content: center;margin-bottom: 20px;}
+    .language button {width: auto;padding: 8px 14px;border-radius: 999px;background: #eeeeee;color: #222;font-size: 14px;border: none;font-weight: bold;cursor: pointer;}
+    .language button.active {background: #111;color: white;}
+    .dog-photo {width: 190px;height: 190px;object-fit: cover;border-radius: 50%;margin-bottom: 18px;}
+    h1 {font-size: 40px;margin: 0 0 8px;}
+    .urgent {font-size: 21px;font-weight: bold;margin: 14px 0;}
+    p {line-height: 1.5;}
+    input,textarea,button.submit,button.location {width: 100%;margin: 10px 0;padding: 16px;border-radius: 16px;border: 1px solid #dddddd;font-size: 17px;font-family: Arial, Helvetica, sans-serif;}
+    textarea {min-height: 110px;resize: vertical;}
+    .action,button.submit,button.location {display: flex;align-items: center;justify-content: center;gap: 10px;border: none;color: white;font-weight: bold;text-decoration: none;cursor: pointer;transition: all 0.2s ease;}
+    .action {width: 100%;padding: 16px;border-radius: 16px;font-size: 18px;margin: 12px 0;}
+    .action:hover,button.submit:hover,button.location:hover {transform: translateY(-2px);box-shadow: 0 8px 20px rgba(0,0,0,0.15);}
+    .call {background: var(--call);}.call:hover {background: var(--call-hover);}
+    .whatsapp {background: var(--whatsapp);}.whatsapp:hover {background: var(--whatsapp-hover);}
+    .email,button.submit {background: var(--email);}.email:hover,button.submit:hover {background: var(--email-hover);}
+    button.location {background: var(--location);}.location:hover {background: var(--location-hover);}
+    .icon {width: 24px;height: 24px;flex-shrink: 0;}
+    .thanks {margin-top: 24px;font-size: 17px;color: var(--muted);font-style: italic;line-height: 1.5;}
+    .small {font-size: 13px;color: #666;margin-top: 12px;line-height: 1.4;}
+    .form-heading {font-size: 18px; font-weight: bold; margin: 20px 0 10px; color: var(--text);}
   </style>
 </head>
-
 <body>
   <main>
     <section class="card">
@@ -222,144 +52,124 @@
         <button onclick="setLanguage('fr')" id="btn-fr">FR</button>
         <button onclick="setLanguage('lu')" id="btn-lu">LU</button>
       </div>
-
-      <div class="alert" id="alert"></div>
-
       <img class="dog-photo" src="dog.jpg" alt="Photo of Flash">
+      <h1 id="title"></h1>
+      <p class="urgent" id="message"></p>
+      <p id="info"></p>
 
-      <h1>Flash</h1>
-      <!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Flash 🐾 Lost Dog">
-<meta property="og:description" content="If you've found Flash, please help me get back home. I am microchipped and friendly, but I may be frightened.">
-<meta property="og:image" content="https://findmydog.online/share.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://findmydog.online">
-<meta property="og:site_name" content="Find My Dog">
+      <a class="action call" id="callButton" href="tel:+352691198105"></a>
+      <a class="action whatsapp" id="whatsappButton" href="https://wa.me/352691198105"></a>
 
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Flash 🐾 Lost Dog">
-<meta name="twitter:description" content="If you've found Flash, please help me get back home.">
-<meta name="twitter:image" content="https://findmydog.online/share.png">
-
-      <p class="urgent" id="subtitle"></p>
-      <p id="intro"></p>
-
-      <button class="location" id="locationButton" onclick="shareLocation()"></button>
-
+      <p class="form-heading" id="formHeading"></p>
       <form id="contactForm" method="POST">
         <input type="text" name="name" id="nameInput">
         <textarea name="message" id="messageInput" required></textarea>
+        <button type="button" class="location" id="locationButton" onclick="shareLocation()"></button>
         <input type="hidden" name="location" id="locationInput">
         <input type="hidden" name="dog" value="Flash">
         <button class="submit" id="submitButton" type="submit"></button>
       </form>
-
       <p id="status" class="small"></p>
       <div class="thanks" id="thanks"></div>
+      <p class="small" id="privacy"></p>
     </section>
   </main>
-
   <script>
     const dogName = "Flash";
     const formEndpoint = "https://formspree.io/f/mzdlwzbo";
-
-    const locationIcon = `
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-      </svg>`;
-
-    const sendIcon = `
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L6 12Zm0 0h7.5" />
-      </svg>`;
+    const phoneNumber = "+352691198105";
+    const locationIcon = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>';
+    const sendIcon = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L6 12Zm0 0h7.5" /></svg>';
+    const callIcon = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a.75.75 0 0 0 .75-.75v-3.386a.75.75 0 0 0-.57-.729l-3.663-.915a.75.75 0 0 0-.782.284l-.803 1.071a.75.75 0 0 1-.862.243 12.035 12.035 0 0 1-7.433-7.433.75.75 0 0 1 .243-.862l1.071-.803a.75.75 0 0 0 .284-.782L7.115 4.32a.75.75 0 0 0-.729-.57H3a.75.75 0 0 0-.75.75v2.25Z" /></svg>';
+    const whatsappIcon = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.198-.296.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>';
+    const checkIcon = '<svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>';
 
     const texts = {
       en: {
-        alert: "🚨 Lost dog",
-        subtitle: "Please help me reunite with my family.",
-        intro: `My name is <strong>${dogName}</strong>. I am microchipped. I am friendly, but I may be frightened. Please send my owner a message as soon as possible.`,
-        location: "Share my location",
-        namePlaceholder: "Your name optional",
-        messagePlaceholder: "Write a short message",
-        submit: "Send message to owner",
-        thanks: "❤️ Thank you for helping me get home.",
-        locationAsk: "Asking for permission to share location...",
-        locationAdded: "Location added to the message.",
+        title: "I am Flash.",
+        message: "Thank you for scanning my tag. If I'm with you, my family would love to hear from you.",
+        info: "I am microchipped. I'm friendly, but I may be frightened.",
+        call: "Call my owner",
+        whatsapp: "Message on WhatsApp",
+        formHeading: "Or send a message",
+        location: "Add my location",
+        locationAdded: "✅ Location added", 
+        namePlaceholder: "Your name (optional)",
+        messagePlaceholder: "Write a short message...",
+        submit: "Send my owner a message",
+        thanks: "Thank you for helping me get home.",
+        privacy: "No app required.<br>No personal information is stored in this QR code.",
+        locationAsk: "Requesting your location...",
         locationUnsupported: "Location sharing is not supported on this device.",
-        locationDenied: "Location permission was not granted. You can still send a message.",
-        positionUnavailable: "Location unavailable. Please try again outdoors or with GPS enabled.",
-        timeout: "Location request timed out. Please try again.",
-        sent: "Thank you. Your message has been sent.",
-        error: "Sorry, the message could not be sent. Please try again."
+        locationDenied: "Location access was denied. You can still send a message.",
+        sent: "Message sent!",
+        error: "Error sending message. Please try again."
       },
       fr: {
-        alert: "🚨 Chien perdu",
-        subtitle: "Aidez moi à retrouver ma famille.",
-        intro: `Je m'appelle <strong>${dogName}</strong>. Je suis identifié par puce électronique. Je suis gentil, mais je peux avoir peur. Merci d'envoyer un message à mon propriétaire dès que possible.`,
-        location: "Partager ma position",
-        namePlaceholder: "Votre nom optionnel",
-        messagePlaceholder: "Écrivez un court message",
-        submit: "Envoyer un message au propriétaire",
-        thanks: "❤️ Merci de m'aider à rentrer chez moi.",
-        locationAsk: "Demande d'autorisation pour partager la position...",
-        locationAdded: "La position a été ajoutée au message.",
+        title: "Je m'appelle Flash",
+        message: "Merci d'avoir scanné ma médaille. Si je suis avec vous, ma famille serait ravie d'avoir de vos nouvelles.",
+        info: "Je suis identifié par puce électronique. Je suis gentil, mais je peux avoir peur.",
+        call: "Appeler mon propriétaire",
+        whatsapp: "Message sur WhatsApp",
+        formHeading: "Ou envoyez un message",
+        location: "Ajouter ma position",
+        locationAdded: "✅ Position ajoutée",
+        namePlaceholder: "Votre nom (facultatif)",
+        messagePlaceholder: "Écrivez un petit message...",
+        submit: "Envoyer un message à mon propriétaire",
+        thanks: "Merci de m'aider à rentrer chez moi.",
+        privacy: "Aucune application n'est nécessaire.<br>Aucune information personnelle n'est stockée dans ce code QR.",
+        locationAsk: "Demande de votre position...",
         locationUnsupported: "Le partage de position n'est pas disponible sur cet appareil.",
-        locationDenied: "La position n'a pas été partagée. Vous pouvez quand même envoyer un message.",
-        positionUnavailable: "La position n'est pas disponible. Merci de réessayer dehors ou avec le GPS activé.",
-        timeout: "La demande de position a expiré. Merci de réessayer.",
-        sent: "Merci. Votre message a été envoyé.",
-        error: "Désolé, le message n'a pas pu être envoyé. Merci de réessayer."
+        locationDenied: "L'accès à votre position a été refusé. Vous pouvez tout de même envoyer un message.",
+        sent: "Message envoyé !",
+        error: "Erreur lors de l'envoi. Veuillez réessayer."
       },
       lu: {
-        alert: "🚨 Hond vermësst",
-        subtitle: "Hëlleft mir, meng Famill erëmzefannen.",
-        intro: `Mäin Numm ass <strong>${dogName}</strong>. Ech hunn en Chip. Ech si frëndlech, mee ech kann Angscht hunn. Schéckt w.e.g. esou séier wéi méiglech eng Noriicht u mäi Besëtzer.`,
-        location: "Meng Positioun deelen",
-        namePlaceholder: "Ären Numm optional",
-        messagePlaceholder: "Schreift eng kuerz Noriicht",
-        submit: "Noriicht un de Besëtzer schécken",
-        thanks: "❤️ Merci, datt Dir mir hëlleft heemzekommen.",
-        locationAsk: "Erlaabnis fir d'Positioun ze deelen gëtt ugefrot...",
-        locationAdded: "D'Positioun gouf an d'Noriicht bäigesat.",
+        title: "Ech heesche Flash",
+        message: "Merci, datt Dir meng Medail gescannt hutt. Wann ech bei Iech sinn, géif meng Famill sech freeën, vun Iech ze héieren.",
+        info: "Ech hunn en Chip. Ech si frëndlech, mee ech kann Angscht hunn.",
+        call: "Mäi Besëtzer urufen",
+        whatsapp: "Noriicht op WhatsApp",
+        formHeading: "Oder schéckt eng Noriicht",
+        location: "Meng Positioun bäifügen",
+        locationAdded: "✅ Positioun bäigefüügt",
+        namePlaceholder: "Ären Numm (optional)",
+        messagePlaceholder: "Schreift eng kuerz Noriicht...",
+        submit: "Eng Noriicht u mäi Besëtzer schécken",
+        thanks: "Merci, datt Dir mir hëlleft heemzekommen.",
+        privacy: "Keng App néideg.<br>Keng perséinlech Donnéeë sinn an dësem QR Code gespäichert.",
+        locationAsk: "Positioun gëtt ugefrot...",
         locationUnsupported: "Positioun deelen ass op dësem Apparat net méiglech.",
-        locationDenied: "D'Positioun gouf net gedeelt. Dir kënnt awer nach eng Noriicht schécken.",
-        positionUnavailable: "D'Positioun ass net verfügbar. Probéiert w.e.g. nach eng Kéier dobaussen oder mat ageschaltem GPS.",
-        timeout: "D'Ufro fir d'Positioun huet ze laang gedauert. Probéiert w.e.g. nach eng Kéier.",
-        sent: "Merci. Är Noriicht gouf geschéckt.",
-        error: "Pardon, d'Noriicht konnt net geschéckt ginn. Probéiert w.e.g. nach eng Kéier."
+        locationDenied: "Den Zougang zu Ärer Positioun gouf refuséiert. Dir kënnt trotzdem eng Noriicht schécken.",
+        sent: "Noriicht geschéckt!",
+        error: "Fehler beim Senden. Versicht et nach emol."
       }
     };
-
     let currentLanguage = "en";
-
     function setLanguage(language) {
       currentLanguage = language;
       const t = texts[language];
-
       document.documentElement.lang = language;
-      document.getElementById("alert").textContent = t.alert;
-      document.getElementById("subtitle").textContent = t.subtitle;
-      document.getElementById("intro").innerHTML = t.intro;
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("message").textContent = t.message;
+      document.getElementById("info").textContent = t.info;
+      document.getElementById("callButton").innerHTML = callIcon + "<span>" + t.call + "</span>";
+      document.getElementById("whatsappButton").innerHTML = whatsappIcon + "<span>" + t.whatsapp + "</span>";
+      document.getElementById("formHeading").textContent = t.formHeading;
       document.getElementById("locationButton").innerHTML = locationIcon + "<span>" + t.location + "</span>";
       document.getElementById("nameInput").placeholder = t.namePlaceholder;
       document.getElementById("messageInput").placeholder = t.messagePlaceholder;
       document.getElementById("submitButton").innerHTML = sendIcon + "<span>" + t.submit + "</span>";
       document.getElementById("thanks").textContent = t.thanks;
-
-      document.querySelectorAll(".language button").forEach(button => {
-        button.classList.remove("active");
-      });
-
+      document.getElementById("privacy").innerHTML = t.privacy;
+      document.querySelectorAll(".language button").forEach(button => button.classList.remove("active"));
       document.getElementById("btn-" + language).classList.add("active");
     }
-
     function shareLocation() {
       const status = document.getElementById("status");
       const t = texts[currentLanguage];
+      const locationBtn = document.getElementById("locationButton");
 
       if (!navigator.geolocation) {
         status.textContent = t.locationUnsupported;
@@ -385,18 +195,11 @@
             messageBox.value = "Location: " + mapLink;
           }
 
-          status.textContent = t.locationAdded;
+          locationBtn.innerHTML = checkIcon + "<span>" + t.locationAdded + "</span>";
+          status.textContent = "";
         },
         function(error) {
-          if (error.code === error.PERMISSION_DENIED) {
-            status.textContent = t.locationDenied;
-          } else if (error.code === error.POSITION_UNAVAILABLE) {
-            status.textContent = t.positionUnavailable;
-          } else if (error.code === error.TIMEOUT) {
-            status.textContent = t.timeout;
-          } else {
-            status.textContent = t.locationDenied;
-          }
+          status.textContent = t.locationDenied;
         },
         {
           enableHighAccuracy: true,
@@ -405,15 +208,12 @@
         }
       );
     }
-
     document.getElementById("contactForm").addEventListener("submit", async function(event) {
       event.preventDefault();
-
       const status = document.getElementById("status");
       const t = texts[currentLanguage];
       const form = event.target;
       const data = new FormData(form);
-
       try {
         const response = await fetch(formEndpoint, {
           method: "POST",
@@ -426,6 +226,8 @@
         if (response.ok) {
           status.textContent = t.sent;
           form.reset();
+          document.getElementById("thanks").style.display = "block";
+          document.getElementById("locationButton").innerHTML = locationIcon + "<span>" + t.location + "</span>";
         } else {
           status.textContent = t.error;
         }
@@ -433,9 +235,7 @@
         status.textContent = t.error;
       }
     });
-
     const browserLanguage = navigator.language.toLowerCase();
-
     if (browserLanguage.startsWith("fr")) {
       setLanguage("fr");
     } else if (
